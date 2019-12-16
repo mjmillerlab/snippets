@@ -12,5 +12,5 @@
 ##### compute consensus for each for BLASTN
 (must install EMBOSS package: conda install emboss)
 (if you need an alignment, you can use a mafft one liner)
-`for i in *.fasta; do cons -sequence $i -outseq w_cons/$i.con; done
-`awk '{if( FNR==1)print ">"FILENAME;else print}' * > W_consensus.fasta
+`for i in *.fasta; do cons -sequence $i -outseq w_cons/$i.con; done`
+`awk '{if( FNR==1)print ">"FILENAME;else print}' * > W_consensus.fasta`
