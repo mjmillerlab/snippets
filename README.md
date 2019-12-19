@@ -12,7 +12,8 @@
 
 ##### get a list of contig sizes
 
-`awk '$0 ~ ">" {if (NR > 1) {print c;} c=0;printf substr($0,2,100) "\t"; } $0 !~ ">" {c+=length($0);} END { print c; }'`
+`cat fasta.fa | awk '$0 ~ ">" {if (NR > 1) {print c;} c=0;printf substr($0,2,100) "\t"; } $0 !~ ">" {c+=length($0);} END { print c; }'`
+
 ####### ht: Daniel Cook: https://www.danielecook.com/generate-fasta-sequence-lengths/
 
 
