@@ -7,7 +7,16 @@
 
 `egrep -r 'Mean value of ln likelihood =' Process/ | cat >output2.txt`
 
-### Process huge folder of alignments
+
+## Multifasta
+
+##### get a list of contig sizes
+
+`awk '$0 ~ ">" {if (NR > 1) {print c;} c=0;printf substr($0,2,100) "\t"; } $0 !~ ">" {c+=length($0);} END { print c; }'`
+####### ht: Daniel Cook: https://www.danielecook.com/generate-fasta-sequence-lengths/
+
+
+## Process huge folder of alignments
 
 ###### compute consensus for each for BLASTN
 (must install EMBOSS package: conda install emboss)
